@@ -31,7 +31,11 @@
 <meta property="og:image" content="http://yoursite.com/2018/10/09/在linux系统中将ES6文件转换为Es5文件并且打包/images/16.PNG">
 <meta property="og:image" content="http://yoursite.com/2018/10/09/在linux系统中将ES6文件转换为Es5文件并且打包/images/17.PNG">
 <meta property="og:image" content="http://yoursite.com/2018/10/09/在linux系统中将ES6文件转换为Es5文件并且打包/images/18.PNG">
-<meta property="og:updated_time" content="2018-10-10T12:10:19.982Z">
+<meta property="og:image" content="http://yoursite.com/2018/10/09/在linux系统中将ES6文件转换为Es5文件并且打包/images/20.PNG">
+<meta property="og:image" content="http://yoursite.com/2018/10/09/在linux系统中将ES6文件转换为Es5文件并且打包/images/22.PNG">
+<meta property="og:image" content="http://yoursite.com/2018/10/09/在linux系统中将ES6文件转换为Es5文件并且打包/images/23.PNG">
+<meta property="og:image" content="http://yoursite.com/2018/10/09/在linux系统中将ES6文件转换为Es5文件并且打包/images/24.PNG">
+<meta property="og:updated_time" content="2018-10-10T13:45:32.002Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="在Linux系统中将ES6文件转换为ES5文件并且打包">
 <meta name="twitter:description" content="1.在Linux中安装node1.下载对应版本的Node.js(https://nodejs.org/en/download/) 2.将下载的代码传输到Linux系统的根目录下的opt文件夹下    对下载的文件进行解压  tar -xvf node-v8.11.3-linux-x64.tar.xz    将解压后的文件移动到你想移动的位置  mv /node-v8.11.3-linux-x64.">
@@ -100,7 +104,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://yoursite.com/2018/10/09/在linux系统中将ES6文件转换为Es5文件并且打包/" data-id="cjn2t8koa00000svddr5g9mnv" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://yoursite.com/2018/10/09/在linux系统中将ES6文件转换为Es5文件并且打包/" data-id="cjn37ka8100002svdpqzq6cq1" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -152,7 +156,7 @@
 <blockquote>
 <p>$ babel 1-hello.js -o 1-hello-es5.js</p>
 </blockquote>
-<h2 id="3-2自动转换"><a href="#3-2自动转换" class="headerlink" title="3.2自动转换"></a>3.2自动转换</h2><p>1.安装打包器  webpack</p>
+<h2 id="3-2自动转换并且打包"><a href="#3-2自动转换并且打包" class="headerlink" title="3.2自动转换并且打包"></a>3.2自动转换并且打包</h2><p>1.安装打包器  webpack</p>
 <blockquote>
 <p>$ npm ibstall webpack webpack-cli –save-dev</p>
 </blockquote>
@@ -172,6 +176,37 @@
 <p>5.打包完成后查看app01文件夹是否有dist文件夹<br><img src="./images/16.PNG" alt="Alt"></p>
 <p>6.查看dist文件夹下的bundle.js文件，就是我们的劳动成果了<br><img src="./images/17.PNG" alt="Alt"></p>
 <p>7.用文件传输将bundle.js传输到本地，然后编写html文件，并且将bundle.js文件导入，运行即可看到结果<br><img src="./images/18.PNG" alt="Alt"></p>
+<p>8.但是bundle.js任然是ES6文件，所以我们还需要将其转化为ES5</p>
+<p>  1）安装babel-lodaer</p>
+<blockquote>
+<p>$ npm install babel-core babel-loader –save-dev</p>
+</blockquote>
+<p>  安装完成后：<br>  <img src="./images/20.PNG" alt="Alt"></p>
+<p>  2)安装预设</p>
+<blockquote>
+<p>$ npm install babel-preset-latest –save-dev</p>
+</blockquote>
+<p>  3)配置文件 .babelrc</p>
+<blockquote>
+<p>$ vi .babelrc</p>
+</blockquote>
+<p>  <img src="./images/22.PNG" alt="Alt"></p>
+<p>  4)在webpack中集成</p>
+<blockquote>
+<p>$ vi webpack.config.js</p>
+</blockquote>
+<p>  <img src="./images/23.PNG" alt="Alt"></p>
+<p>9.转化打包，但是由于安装babel-lodaer时的版本不匹配，所以我们还需要重新安装一下babel-lodaer</p>
+<blockquote>
+<p>$ npm install babel-loader@7 –save-dev<br>$ vi package.json</p>
+</blockquote>
+<p>运行完成后进入package.json看到版本变成下图，则表示更改成功</p>
+<p><img src="./images/24.PNG" alt="Alt"></p>
+<p>10.打包转换</p>
+<blockquote>
+<p>$ npm run build</p>
+</blockquote>
+<p>11.打包成功后查看dist文件下的bundle.js文件，如果你的箭头函数转化为function函数，则表示转换成功</p>
 
       
     </div><!-- .entry-content -->
