@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="明天更美好" />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>MengMF</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="明天更美好">
+<meta property="og:type" content="website">
+<meta property="og:title" content="MengMF">
+<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:site_name" content="MengMF">
+<meta property="og:description" content="明天更美好">
+<meta property="og:locale" content="zh-Hans">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MengMF">
+<meta name="twitter:description" content="明天更美好">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+  
+  <!-- baidu webmaster push -->
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="MengMF" rel="home">MengMF</a>
+      </h1>
+      
+        <script type="text/javascript" src="http://api.hitokoto.us/rand?encode=js&charset=utf-8"></script>
+        <h2 class="site-description"><script>hitokoto();</script></h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/MengMF">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        <div id="primary" class="site-content"><div id="content" role="main">
+  
+    <article id="post-在linux系统中将ES6文件转换为Es5文件并且打包" class="post-在linux系统中将ES6文件转换为Es5文件并且打包 post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        
+  
+    <h1 class="entry-title">
+      <a class="article-title" href="/2018/10/09/在linux系统中将ES6文件转换为Es5文件并且打包/">在Linux系统中将ES6文件转换为ES5文件并且打包</a>
+    </h1>
+  
+
+        
+        <div class="comments-link">
+            
+            <a href="javascript:void(0);" data-url="http://yoursite.com/2018/10/09/在linux系统中将ES6文件转换为Es5文件并且打包/" data-id="cjn1lp83x0000icvd4lzbruv9" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <h2 id="1-在Linux中安装node"><a href="#1-在Linux中安装node" class="headerlink" title="1.在Linux中安装node"></a>1.在Linux中安装node</h2><p>1.下载对应版本的Node.js(<a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">https://nodejs.org/en/download/</a>)</p>
+<p>2.将下载的代码传输到Linux系统的根目录下的opt文件夹下</p>
+<p>   对下载的文件进行解压  tar -xvf node-v8.11.3-linux-x64.tar.xz</p>
+<p>   将解压后的文件移动到你想移动的位置  mv /node-v8.11.3-linux-x64.tar.xz /位置</p>
+<p>3.配置环境变量<br>    1）<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo vim /etc/profile</span><br></pre></td></tr></table></figure></p>
+<pre><code>2)按i进入编辑模式
+
+3）在末尾添加
+</code></pre><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> NODE_HOME=<span class="regexp">/(node 目录)</span></span><br><span class="line"><span class="regexp">export PATH=$PATH:$NODE_HOME/</span>bin</span><br><span class="line"><span class="keyword">export</span> NODE_PATH=$NODE_HOME/lib/node_modeles</span><br></pre></td></tr></table></figure>
+<p> <img src="./images/1.PNG" alt="Alt"></p>
+<p>4.按ESC键退出编辑模式，:wq退出vim</p>
+<p>5.重新启动你的系统</p>
+<p>6.测试(在任何目录都可以)<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ node --version</span><br><span class="line">$ npm -version</span><br></pre></td></tr></table></figure></p>
+<p><img src="./images/2.PNG" alt="Alt"></p>
+<p>7.Node.js安装完成</p>
+<h2 id="2-搭建环境并且创建一个项目"><a href="#2-搭建环境并且创建一个项目" class="headerlink" title="2.搭建环境并且创建一个项目"></a>2.搭建环境并且创建一个项目</h2><p>1.在该项目下进行初始化</p>
+<blockquote>
+<p>$ npm init</p>
+</blockquote>
+<p> 使用-y参数创建默认package.json文件</p>
+<blockquote>
+<p>$ npm init -y</p>
+</blockquote>
+<p>2.使用模块化方式编写代码<br>  例：user.js<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">var</span> msg  = <span class="string">"hello world"</span></span><br><span class="line"> <span class="keyword">var</span> obj = &#123;</span><br><span class="line">          name:<span class="string">'terry'</span>,</span><br><span class="line">          sayName:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//向外部暴露接口</span></span><br><span class="line">        <span class="built_in">module</span>.exports = obj;</span><br><span class="line"><span class="string">``</span><span class="string">` </span></span><br><span class="line"><span class="string">对应的index.js</span></span><br><span class="line"><span class="string">`</span><span class="string">``</span>javascript</span><br><span class="line"><span class="comment">//加载模块，实际上加载模块module.exports</span></span><br><span class="line"> <span class="keyword">var</span> obj = <span class="built_in">require</span>(<span class="string">'./user.js'</span>);</span><br><span class="line"> obj.sayName();</span><br></pre></td></tr></table></figure></p>
+<p>3.第三方模块的调用,下载到当前目录，供当前目录使用<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ npm install jquery --save</span><br><span class="line">$ npm install qs --save</span><br></pre></td></tr></table></figure></p>
+<h2 id="3-转换"><a href="#3-转换" class="headerlink" title="3.转换"></a>3.转换</h2><p>1.babel的安装</p>
+<blockquote>
+<p>$ npm install babel-cli –global</p>
+</blockquote>
+<p>一般会出现权限的错误，因为安装的地址不是全局的(如果没有可以忽略)</p>
+<blockquote>
+<p>$ sudo chown -R $(whoami) $(npm config get prefix)/{lib/node_modules,bin,share}</p>
+</blockquote>
+<p>2.安装bebel-preset-latest</p>
+<blockquote>
+<p>$ npm install babel-preset-latest –save-dev</p>
+</blockquote>
+<p>3.配置环境</p>
+<blockquote>
+<p>$ vim .babelrc</p>
+</blockquote>
+<p>进入后按i键进入编辑模式<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line"><span class="string">"presets"</span>:[<span class="string">"latest"</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>4.转换</p>
+<blockquote>
+<p>$ babel 1-hello.js -o 1-hello-es5.js</p>
+</blockquote>
+<h2 id="4-打包"><a href="#4-打包" class="headerlink" title="4.打包"></a>4.打包</h2><p>1.安装打包器  webpack</p>
+<blockquote>
+<p>$ npm ibstall webpack webpack-cli –save-dev</p>
+</blockquote>
+<p>2.添加配置文件 webpack.config.js<br><img src="./images/3.PNG" alt="Alt"></p>
+<p>3.为package.json添加脚本</p>
+<p>4.执行打包</p>
+<blockquote>
+<p>$ npm run 脚本名称</p>
+</blockquote>
+<p>5.安装babel-core babel-loader</p>
+<p>6.安装预设 npm install babel-preset-latest –save-dev </p>
+<p>  配置babel的配置文件 .babelrc</p>
+<p>7.在webpack中集成</p>
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="/2018/10/09/在linux系统中将ES6文件转换为Es5文件并且打包/">
+    <time datetime="2018-10-09T10:47:06.449Z" class="entry-date">
+        2018-10-09
+    </time>
+</a>
+    
+    
+    </footer>
+</article>
+
+
+
+
+
+
+  
+    <article id="post-如何在GitHub上传代码" class="post-如何在GitHub上传代码 post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        
+  
+    <h1 class="entry-title">
+      <a class="article-title" href="/2018/10/09/如何在GitHub上传代码/">如何在GitHub上传代码</a>
+    </h1>
+  
+
+        
+        <div class="comments-link">
+            
+            <a href="javascript:void(0);" data-url="http://yoursite.com/2018/10/09/如何在GitHub上传代码/" data-id="cjn1gvp350000kgvdk0o8vy56" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <h2 id="1-在GitHub注册账号并新建项目"><a href="#1-在GitHub注册账号并新建项目" class="headerlink" title="1.在GitHub注册账号并新建项目"></a>1.在GitHub注册账号并新建项目</h2><p>1.登录上注册的GitHub账号后</p>
+<p><img src="./images/4.PNG" alt="Alt"></p>
+<p>2.然后进入到GitHub的项目仓库创建页面</p>
+<p><img src="./images/5.PNG" alt="Alt"></p>
+<p>3.完成后进入到创建项目的页面，若要进行项目名称的修改或者删除等的修改，都可以点击setting</p>
+<p><img src="./images/6.PNG" alt="Alt"></p>
+<h2 id="2-本地git操作"><a href="#2-本地git操作" class="headerlink" title="2.本地git操作"></a>2.本地git操作</h2><p>1.安装Git，并且打开Git CMD，cd命令进入到对应的文件夹</p>
+<p>2.初始化一个git仓库</p>
+<blockquote>
+<p>$ git init</p>
+</blockquote>
+<p>3.查看文件夹内文件的状态(若有新增的文件，则会变红)。</p>
+<blockquote>
+<p>$ git status</p>
+</blockquote>
+<p><img src="./images/7.PNG" alt="Alt"></p>
+<p>4.若有新增的文件，则把文件交给git追踪</p>
+<blockquote>
+<p>$ git add *</p>
+</blockquote>
+<p>5.再次查看文件的状态<br><img src="./images/9.PNG" alt="Alt"></p>
+<p>6.对新增的文件进行定义和说明(英文的引号)</p>
+<blockquote>
+<p>$ git commit -m “定义的新增文件的信息”</p>
+</blockquote>
+<p><img src="./images/10.PNG" alt="Alt"></p>
+<p>6.若是第一次使用，则会询问你是谁<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ git config user.email <span class="string">"注册GitHub账号时使用的邮箱"</span></span><br><span class="line">$ git config user.name <span class="string">"注册GitHub账号时使用的用户名"</span></span><br><span class="line"><span class="comment">//查看配置信息</span></span><br><span class="line">$ git config --list</span><br></pre></td></tr></table></figure></p>
+<p>7.进行远程连接</p>
+<blockquote>
+<p>$ git remote add origin GitHub项目的地址</p>
+</blockquote>
+<p><img src="./images/11.PNG" alt="Alt"></p>
+<p>8.将远程仓库中的代码更新都本地仓库中</p>
+<blockquote>
+<p>$ git pull origin master –allow-unrelated-histories<br>–allow-unrelated-histories 以后可以不需要</p>
+</blockquote>
+<p>9.将本地仓库中的文件导入到远程仓库中，完成</p>
+<blockquote>
+<p>$ git push origin master</p>
+</blockquote>
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="/2018/10/09/如何在GitHub上传代码/">
+    <time datetime="2018-10-09T08:32:10.263Z" class="entry-date">
+        2018-10-09
+    </time>
+</a>
+    
+    
+    </footer>
+</article>
+
+
+
+
+
+
+  
+  
+
+</div></div>
+        <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="搜索" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget-content">
+      <ul>
+        
+          <li>
+            <a href="/2018/10/09/在linux系统中将ES6文件转换为Es5文件并且打包/">在Linux系统中将ES6文件转换为ES5文件并且打包</a>
+          </li>
+        
+          <li>
+            <a href="/2018/10/09/如何在GitHub上传代码/">如何在GitHub上传代码</a>
+          </li>
+        
+      </ul>
+    </div>
+  </aside>
+
+  
+    
+  
+    
+  
+</div>
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2018 MengMF
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></p>
+</footer>
+    <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+</body>
+</html>
